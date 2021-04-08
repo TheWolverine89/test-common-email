@@ -56,3 +56,34 @@ public class EmailTest {
 		assertEquals(1, email.getCcAddresses().size());
 		
 	}
+	
+	/*
+	 * Test void addHeader(String name, String value) function
+	 * Coverage: 100.0%
+	 */
+	@Test
+	public void testAddHeader() throws Exception {
+		
+		email.addHeader("Test", "Test Header");
+		
+		assertEquals(1, email.getHeaders().size());
+		
+	}
+	
+	@Test
+	public void testAddHeaderNullName() throws Exception {
+		
+		email.addHeader(null, "Test Header");
+				
+		assertEquals(0, email.getHeaders().size());
+		
+	}
+	
+	@Test
+	public void testAddHeaderNullValue() throws Exception {
+		
+		email.addHeader("Test", null);
+				
+		assertEquals(0, email.getHeaders().size());
+		
+	}
