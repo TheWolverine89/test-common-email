@@ -215,3 +215,18 @@ public class EmailTest {
 		assertEquals(now, date);
 		
 	}
+	
+	/*
+	 * Test int getSocketConnectionTimeout() function
+	 * Coverage: 100.0%
+	 */
+	@Test
+	public void testGetSocketTimeout() throws Exception {
+		
+		email.setSocketTimeout(100);
+		
+		int timeout=email.getSocketConnectionTimeout();
+		
+		assertEquals(100, timeout);
+		
+	}
