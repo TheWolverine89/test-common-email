@@ -181,3 +181,21 @@ public class EmailTest {
 		assertEquals(null, hostname);
 		
 	}
+	
+	/*
+	 * Test Session getMailSession() function
+	 * Coverage: 90.9%
+	 */
+	@Test
+	public void testGetMailSession() throws Exception {
+		
+		email.setHostName("local host");
+		email.setAuthentication("userName", "password");
+		email.setBounceAddress("a@abc.com");
+		email.setSSLOnConnect(true);
+		email.setStartTLSEnabled(true);
+		email.setSSLCheckServerIdentity(true);
+		
+		email.getMailSession();
+		
+	}
