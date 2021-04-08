@@ -100,3 +100,58 @@ public class EmailTest {
 		assertEquals(1, email.getReplyToAddresses().size());
 		
 	}
+	
+	/*
+	 * Test void buildMimeMessage() function
+	 * Coverage: 70.8%
+	 */
+	@Test
+	public void testBuildMimeMessage() throws Exception {
+		
+		email.setHostName("localhost");
+		email.setSmtpPort(1234);
+		email.setFrom("a@abc.com");
+		email.addTo("a@abc.org");
+		email.setSubject("Test");
+		email.setCharset("ISO-8859-1");
+		email.setContent("Test Content", "text/plain");
+		email.addCc("a@abc.net");
+		email.addBcc("a@abc.com");
+		email.addHeader("Test", "Test Header");
+		email.addReplyTo("a@abc.com", "A");
+		email.setSentDate(new Date());
+		
+		email.buildMimeMessage();
+		
+	}
+	
+	@Test
+	public void testBuildMimeMessageNullContent() throws Exception {
+				
+		email.setHostName("localhost");
+		email.setSmtpPort(1234);
+		email.setFrom("a@abc.com");
+		email.addTo("a@abc.org");
+		email.setSubject("Test");
+		email.setCharset("ISO-8859-1");
+		email.setContent(null);
+		email.addCc("a@abc.net");
+		email.addBcc("a@abc.com");
+		email.addHeader("Test", "Test Header");
+		email.addReplyTo("a@abc.com", "A");
+		email.setSentDate(new Date());
+		
+		email.buildMimeMessage();
+		
+	}
+	
+	@Test
+	public void testBuildMimeMessageException() throws Exception {
+		
+		Properties props = new Properties();
+		Session session = Session.getDefaultInstance(props);
+		email.message=email.createMimeMessage(session);
+		
+		email.buildMimeMessage();
+		
+	}
