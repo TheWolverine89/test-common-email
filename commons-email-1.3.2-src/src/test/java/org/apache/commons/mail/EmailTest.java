@@ -230,3 +230,20 @@ public class EmailTest {
 		assertEquals(100, timeout);
 		
 	}
+	
+	/*
+	 * Test Email setFrom(String email) function
+	 * Coverage: 100.0%
+	 */
+	@Test
+	public void testSetFrom() throws Exception {
+		
+		email.setFrom("a@abc.com");
+		
+		InternetAddress address = email.getFromAddress();
+		
+		assertEquals(email.getFromAddress(), address);
+		
+	}
+
+}
