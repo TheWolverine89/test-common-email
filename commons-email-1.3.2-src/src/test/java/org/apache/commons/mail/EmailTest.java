@@ -199,3 +199,19 @@ public class EmailTest {
 		email.getMailSession();
 		
 	}
+	
+	/*
+	 * Test Date getSentDate() function
+	 * Coverage: 100.0%
+	 */
+	@Test
+	public void testGetSentDate() throws Exception {
+		
+		Date now = new Date();
+		email.setSentDate(now);
+		
+		Date date=email.getSentDate();
+		
+		assertEquals(now, date);
+		
+	}
