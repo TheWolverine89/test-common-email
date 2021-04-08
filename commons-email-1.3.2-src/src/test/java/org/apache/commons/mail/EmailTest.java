@@ -43,3 +43,16 @@ public class EmailTest {
 		assertEquals(3, email.getBccAddresses().size());
 		
 	}
+	
+	/*
+	 * Test Email addCc(String email) function
+	 * Coverage: 100.0%
+	 */
+	@Test
+	public void testAddCc() throws Exception {
+		
+		email.addCc("a@abc.com");
+		
+		assertEquals(1, email.getCcAddresses().size());
+		
+	}
