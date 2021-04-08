@@ -155,3 +155,29 @@ public class EmailTest {
 		email.buildMimeMessage();
 		
 	}
+	
+	/*
+	 * Test String getHostName() function
+	 * Coverage: 70.6%
+	 */
+	@Test
+	public void testGetHostName() throws Exception {
+		
+		email.setHostName("192.127.0.1");
+		
+		String hostname=email.getHostName();
+		
+		assertEquals("192.127.0.1", hostname);
+		
+	}
+	
+	@Test
+	public void testGetHostNameNull() throws Exception {
+		
+		email.setHostName(null);
+		
+		String hostname=email.getHostName();
+		
+		assertEquals(null, hostname);
+		
+	}
