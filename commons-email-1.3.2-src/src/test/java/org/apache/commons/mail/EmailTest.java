@@ -30,3 +30,16 @@ public class EmailTest {
 	public void tearDownEmailTest() throws Exception {
 		
 	}
+	
+	/*
+	 *Test Email  addBcc(String... emails) function
+	 * Coverage: 84.8%
+	 */
+	@Test
+	public void testAddBcc() throws Exception {
+		
+		email.addBcc(TEST_EMAILS);
+		
+		assertEquals(3, email.getBccAddresses().size());
+		
+	}
