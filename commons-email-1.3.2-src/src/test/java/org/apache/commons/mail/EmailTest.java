@@ -87,3 +87,16 @@ public class EmailTest {
 		assertEquals(0, email.getHeaders().size());
 		
 	}
+	
+	/*
+	 * Test Email addReplyTo(String email, String name) function
+	 * Coverage: 100.0%
+	 */
+	@Test
+	public void testAddReplyTo() throws Exception {
+		
+		email.addReplyTo("a@abc.com", "Test Name");
+		
+		assertEquals(1, email.getReplyToAddresses().size());
+		
+	}
